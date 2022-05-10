@@ -6,7 +6,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 75%;
-  height: 100%;
+  height: 96%;
   h1 {
     color: white;
     font-weight: bold;
@@ -18,7 +18,7 @@ const Content = ({ children }) => {
   return (
     <ContentWrapper>
       {children}
-      <MainMenu />
+      
     </ContentWrapper>
   );
 };

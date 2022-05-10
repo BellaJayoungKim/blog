@@ -69,7 +69,6 @@ const Palette = ({ target, hexColor, setHexColor }) => {
     setHexColor(color);
   }, []);
 
-  // 스와치(input[type=color]) 컬러 변경
 
   // 리덕스 스토어 palette 컬러 변경
   const changePaletteColor = () => {
@@ -85,7 +84,7 @@ const Palette = ({ target, hexColor, setHexColor }) => {
     <Wrapper color={palette[target]['color']}>
       <WhiteWrapper>
         <SwatchWrapper>
-ㄴ          <SwatchInfo>
+          <SwatchInfo>
             <p>{palette[target]['title']}</p>
               <Button type="button" onClick={changePaletteColor}>
                 확인

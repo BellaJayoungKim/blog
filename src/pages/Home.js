@@ -4,8 +4,11 @@ import Layout from '../components/Layout/Layout';
 import Sidebar from '../components/Layout/Sidebar';
 import Content from '../components/Layout/Content';
 import Card from '../components/Layout/Card';
+import Card2 from '../components/Layout/Card2';
 import Toptitle from '../components/Layout/Toptitle';
 import DivBox from '../components/Layout/DivBox';
+import MainMenu from '../components/Menu/MainMenu';
+
 import {
   MdLocationOn,
   MdPhoneIphone,
@@ -99,6 +102,7 @@ const Home = () => {
       <Toptitle>
       </Toptitle>
       <DivBox>
+      <MainMenu />
       <Sidebar>
         <Card>
           <FlexWrapper>
@@ -125,12 +129,11 @@ const Home = () => {
         </Card>
       </Sidebar>
       <Content>
-        <Card>
+        <Card2>
           <ContentSection>
             <div>
               <img
                 src={publicUrl + '/resources/img/miniroom.gif'}
-                alt="miniroom"
               />
             </div>
           </ContentSection>
@@ -144,7 +147,7 @@ const Home = () => {
               <li></li>
             </ul>
           </ContentSection>
-        </Card>
+        </Card2>
       </Content>
       </DivBox>
     </Layout>

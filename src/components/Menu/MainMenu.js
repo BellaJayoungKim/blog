@@ -5,14 +5,13 @@ import { NavLink } from 'react-router-dom';
 const Nav = styled.nav`
   z-index: -1;
   position: absolute;
-  top: 70px;
-  right: -70px;
+  right: 5px;
     a {
       display: inline-block;
       width: 85px;
       height: 40px;
       margin-bottom: 2px;
-      padding: 10px 10px 10px 15px;
+      padding: 10px 10px 10px 10px;
       background: ${props => props.theme.layoutBg1.color};
       border: 1px solid #a5a5a5;
       border-radius: 10px;
