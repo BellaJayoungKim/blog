@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainMenu from '../Menu/MainMenu';
 
 const ContentWrapper = styled.div`
   display: flex;

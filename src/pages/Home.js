@@ -13,7 +13,6 @@ import {
   MdLocationOn,
   MdPhoneIphone,
 } from 'react-icons/md';
-import { publicUrl } from '../utils/utils';
 
 const FlexWrapper = styled.div`
   display: flex;
@@ -60,9 +59,7 @@ const ContentSection = styled.section`
 
 const ProfileSection = styled.section`
   height: fit-content !important;
-  &:last-of-type {
-    padding: 10px 0;
-    border-top: 1px dashed #a5a5a5;
+  &
     p {
       display: flex;
       align-items: center;
@@ -77,21 +74,6 @@ const ProfileSection = styled.section`
     width: 100%;
     height: auto;
     object-fit: cover;
-  }
-  .my-name {
-    margin-right: 5px;
-    color: ${props => props.theme.layoutBg1.color};
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  .my-sex,
-  .my-brthdy {
-    color: #9e9e9e;
-    font-size: 0.85rem;
-  }
-  .my-sex {
-    margin-right: 2px;
-    font-size: 0.8rem;
   }
 `;
 
@@ -108,23 +90,16 @@ const Home = () => {
           <FlexWrapper>
             {/* 프로필영역  */}
             <ProfileSection>
-              <img src={publicUrl + '/resources/img/flower1.jpg'} alt="profile" />
+              <img src={process.env.PUBLIC_URL + '/resources/img/flower1.jpg'} alt="profile" />
             </ProfileSection>
-            <ProfileSection>
-              <p>
-                <span className="my-name">김자영</span>
-                <span className="my-sex">(♀)</span>
-                <span className="my-brthdy">1990.07.11</span>
-              </p>
-              <p>
-                <MdPhoneIphone />
-                010-0000-0000
-              </p>
-              <p>
+              <div>
+                <div className="my-name">방문해주셔서 감사합니다.</div>
+                <br></br>
+              </div>
+              <div>
                 <MdLocationOn />
-                서울시 은평구
-              </p>
-            </ProfileSection>
+                서울시
+              </div>
           </FlexWrapper>
         </Card>
       </Sidebar>
@@ -133,7 +108,7 @@ const Home = () => {
           <ContentSection>
             <div>
               <img
-                src={publicUrl + '/resources/img/miniroom.gif'}
+                src={process.env.PUBLIC_URL + '/resources/img/miniroom.gif'}
               />
             </div>
           </ContentSection>

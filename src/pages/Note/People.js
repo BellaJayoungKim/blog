@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { publicUrl } from '../../utils/utils';
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,7 +20,6 @@ const Wrapper = styled.div`
 const People = () => {
   return (
     <Wrapper>
-      <img src={publicUrl + '/resources/img/assa.jfif'} alt="assa" />
     </Wrapper>
   );
 };

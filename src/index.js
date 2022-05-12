@@ -8,7 +8,7 @@ import rootReducer from './module';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(rootReducer, composeWithDevTools());
-
+// composeWithDevTools 를 사용하여 리덕스 개발자 도구 활성화
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter basename={process.env.PUBLIC_URL}>

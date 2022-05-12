@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { publicUrl } from '../../../utils/utils';
 
 const Wrapper = styled.div`
   padding: 10px 0;
@@ -42,8 +41,7 @@ const Main = () => {
   return (
     <Wrapper>
       <h2>danbilee::</h2>
-      <p className="at">2020.10.30_Bumgye_DarakBang::</p>
-      <img src={publicUrl + '/resources/img/aboutMe.JPG'} alt="selfie" />
+      <img src={process.env.PUBLIC_URL + '/resources/img/aboutMe.JPG'} alt="selfie" />
       <p className="warn">눈뽕주의::감성주의::</p>
       <TxtWrapper>
         <p className="txt">"나를 봐."</p>

@@ -15,14 +15,6 @@ const ToggleHeader = styled.div`
   }
 `;
 
-const ToggleButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px;
-  cursor: pointer;
-`;
-
 const ToggleContent = styled.div`
   display: ${props => (props.isOpen ? 'flex' : 'none')};
   padding-top: 10px;

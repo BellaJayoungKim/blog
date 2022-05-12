@@ -2,7 +2,6 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { setColor } from '../../../module/palette';
-import { getRandomHexColor } from '../../../utils/utils';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -36,17 +35,6 @@ const SwatchInfo = styled.div`
   }
 `;
 
-const Button = styled.button`
-  height: 18px;
-  margin-right: 3px;
-  padding: 0 5px;
-  line-height: 18px;
-  font-weight: bold;
-  font-size: 0.8rem;
-  outline: 0;
-  cursor: pointer;
-`;
-
 const Colors = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -65,20 +53,15 @@ const Palette = ({ target, hexColor, setHexColor }) => {
   const { palette } = useSelector(state => state);
 
   // hexColor 변경
-  const handleHexColor = useCallback(color => {
+  const handleColor = useCallback(color => {
     setHexColor(color);
-  }, []);
-
-
-  // 리덕스 스토어 palette 컬러 변경
-  const changePaletteColor = () => {
     dispatch(
       setColor({
         key: target,
-        value: hexColor,
+        value: color,
       }),
     );
-  };
+  }, []);
 
   return (
     <Wrapper color={palette[target]['color']}>
@@ -86,23 +69,19 @@ const Palette = ({ target, hexColor, setHexColor }) => {
         <SwatchWrapper>
           <SwatchInfo>
             <p>{palette[target]['title']}</p>
-              <Button type="button" onClick={changePaletteColor}>
-                확인
-              </Button>
           </SwatchInfo>
         </SwatchWrapper>
-        <ColorBook handleHexColor={handleHexColor} />
+        <ColorBook handleColor={handleColor} />
       </WhiteWrapper>
     </Wrapper>
   );
 };
 
-const ColorBook = ({ handleHexColor }) => {
+const ColorBook = ({ handleColor }) => {
   const colors = [
     '#ffa8a8',
     '#ff6b6b',
     '#faa2c1',
-    '#e5dbff',
     '#845ef7',
     '#d0ebff',
     '#339af0',
@@ -112,11 +91,7 @@ const ColorBook = ({ handleHexColor }) => {
     '#ffe8cc',
     '#ffc078',
     '#ff922b',
-    '#f1f3f5',
-    '#dee2e6',
-    '#ced4da',
-    '#343a40',
-    '#212529',
+    
   ];
 
   return (
@@ -126,7 +101,7 @@ const ColorBook = ({ handleHexColor }) => {
           key={index}
           color={color}
           onClick={() => {
-            handleHexColor(color)
+            handleColor(color)
           }}
         ></Color>
       ))}

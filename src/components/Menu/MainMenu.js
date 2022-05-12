@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const Nav = styled.nav`
-  z-index: -1;
   position: absolute;
   right: 5px;
     a {
