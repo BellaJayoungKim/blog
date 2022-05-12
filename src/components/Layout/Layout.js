@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `;
 
 const BorderWrapper = styled.div`
-  width: 75%;
+  width: 78%;
   height: 95vh;
   padding: 25px;
   background: ${props => props.theme.layoutBg1.color};

@@ -15,7 +15,7 @@ const Toptitlearea = styled.div`
 const Toptitle = ({ children }) => {
   return (
     <Toptitlearea>
-      <h3>KIM JA YOUNG BLOG</h3>
+      <h3>JA YOUNG's BLOG</h3>
       {children}
     </Toptitlearea>
   );

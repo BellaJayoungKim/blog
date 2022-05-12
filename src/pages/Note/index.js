@@ -17,7 +17,7 @@ const Profile = () => {
   const list = [
     {
       id: 1,
-      title: '👩준비중...',
+      title: '★ 준비중...',
       url: '/intro',
       child: [
       ],
