@@ -16,7 +16,7 @@ const ToggleHeader = styled.div`
 `;
 
 const ToggleContent = styled.div`
-  display: ${props => (props.isOpen ? 'flex' : 'none')};
+  display: 'flex' ;
   padding-top: 10px;
 `;
 
@@ -30,8 +30,7 @@ const ChangeSkin = () => {
       <ToggleHeader>
         <h2>환경설정</h2>
       </ToggleHeader>
-      <ToggleContent isOpen={'true'}>
-       
+      <ToggleContent>
         <Palette
           target={'bg'}
           hexColor={hexColor}
@@ -40,7 +39,7 @@ const ChangeSkin = () => {
       </ToggleContent>
       <ToggleHeader>
       </ToggleHeader>
-      <ToggleContent isOpen={'true'}>
+      <ToggleContent>
         <Palette
           target={'layoutBg1'}
           hexColor={hexColor}
@@ -49,7 +48,7 @@ const ChangeSkin = () => {
       </ToggleContent>
       <ToggleHeader>
       </ToggleHeader>
-      <ToggleContent isOpen={'true'}>
+      <ToggleContent>
         <Palette
           target={'layoutBorder2'}
           hexColor={hexColor}

@@ -7,13 +7,10 @@ const Wrapper = styled.div`
   width: 100%;
   padding: 10px;
   border: 1px solid #a5a5a5;
-  background: ${props => props.color};
   & > div:not(:last-of-type) {
     display: inline-block;
   }
-  & > div:nth-child(2) {
-    width: 55%;
-  }
+  
 `;
 
 const WhiteWrapper = styled.div`
@@ -44,6 +41,8 @@ const Colors = styled.ul`
 const Color = styled.li`
   width: 25px;
   height: 25px;
+  border-radius: 50%;
+  margin-right: 3px;
   background: ${props => props.color};
   cursor: pointer;
 `;
@@ -65,14 +64,12 @@ const Palette = ({ target, hexColor, setHexColor }) => {
 
   return (
     <Wrapper color={palette[target]['color']}>
-      <WhiteWrapper>
         <SwatchWrapper>
           <SwatchInfo>
             <p>{palette[target]['title']}</p>
           </SwatchInfo>
         </SwatchWrapper>
         <ColorBook handleColor={handleColor} />
-      </WhiteWrapper>
     </Wrapper>
   );
 };
@@ -80,7 +77,6 @@ const Palette = ({ target, hexColor, setHexColor }) => {
 const ColorBook = ({ handleColor }) => {
   const colors = [
     '#ffa8a8',
-    '#ff6b6b',
     '#faa2c1',
     '#845ef7',
     '#d0ebff',

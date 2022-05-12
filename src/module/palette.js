@@ -9,11 +9,11 @@ export const setColor = payload => ({ type: SET_COLOR, payload });
 /* 리덕스에서 관리 할 상태 정의 */
 const initialState = {
   bg: {
-    title: '배경',
+    title: '전체배경',
     color: 'white',
   },
   layoutBg1: {
-    title: '배경2 및 메뉴',
+    title: '내부배경 및 목차글씨',
     color: '#6438e5',
   },
   layoutBorder2: {

@@ -17,10 +17,9 @@ const Profile = () => {
   const list = [
     {
       id: 1,
-      title: '👩‍💻내 소개',
+      title: '👩준비중...',
       url: '/intro',
       child: [
-        { id: 1, title: '기본정보', url: '/default' },
       ],
     }
   ];
@@ -34,7 +33,7 @@ const Profile = () => {
 
       <Sidebar>
         <Card>
-          <SubMenu title="List" list={list} />
+          <SubMenu title="전체목록" list={list} />
         </Card>
       </Sidebar>
       <Content>

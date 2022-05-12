@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import styled from 'styled-components';
 import Layout from '../components/Layout/Layout';
 import Sidebar from '../components/Layout/Sidebar';
@@ -10,8 +10,7 @@ import DivBox from '../components/Layout/DivBox';
 import MainMenu from '../components/Menu/MainMenu';
 
 import {
-  MdLocationOn,
-  MdPhoneIphone,
+  MdLocationOn
 } from 'react-icons/md';
 
 const FlexWrapper = styled.div`
@@ -38,6 +37,7 @@ const ContentSection = styled.section`
       min-height: 200px;
       img {
         width: 100%;
+        height: 150px;
       }
     }
   }
@@ -77,8 +77,31 @@ const ProfileSection = styled.section`
   }
 `;
 
+const Notebook = styled.input`
+  color: #000;
+  font-size: 1em;
+  border: 1px solid purple;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  height:40px;
+  width: 80%;
+`;
+
+const AddButton = styled.button`
+  color: #000 ;
+  font-size: 1em;
+  border: 1px solid purple;
+  border-radius: 3px;
+  margin-left:5px;
+  margin-bottom: 5px;
+  height:40px;
+  width: 90px;
+`;
+
 const Home = () => {
 
+  let [sentence, setSentence] = useState(['안녕하세요', '잘보고 갑니다~']);
+  let [newInput, setNewInput] = useState('');
   return (
     <Layout>
       <Toptitle>
@@ -98,7 +121,7 @@ const Home = () => {
               </div>
               <div>
                 <MdLocationOn />
-                서울시
+                위치
               </div>
           </FlexWrapper>
         </Card>
@@ -108,18 +131,26 @@ const Home = () => {
           <ContentSection>
             <div>
               <img
-                src={process.env.PUBLIC_URL + '/resources/img/miniroom.gif'}
+                src={process.env.PUBLIC_URL + '/resources/img/secondBackgroung.png'}
               />
             </div>
           </ContentSection>
           <ContentSection>
-            <h2>한 줄 감성</h2>
+            <h2>한줄 남기기</h2>
+            <Notebook onChange={(e) => {setNewInput(e.target.value)} }></Notebook>
+            <AddButton onClick={() => {
+                let newSentence = [...sentence];
+                newSentence.unshift(newInput);
+                  setSentence(newSentence);
+              }}> 등록 </AddButton>
             <ul>
-              <li>싸이월드 미니홈피 감성으로 기획, 개발했습니다~☆</li>
-              <li>프로필 페이지를 구경해주세요~☆</li>
-              <li>배경도 바꿀 수 있답니다~☆</li>
-              <li></li>
-              <li></li>
+              {
+                sentence.map(function(data, i) { //반복문을 쓸때는 key를 써야함 
+                  return ( 
+                    <li>{data}</li>
+                  )
+                })
+              }
             </ul>
           </ContentSection>
         </Card2>
